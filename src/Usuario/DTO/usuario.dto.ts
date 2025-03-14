@@ -1,5 +1,5 @@
-import { IsNome, IsInt, IsNotEmpty, IsString, MinLength } from "class-validator";
-import { nomeUnico } from "../validacao1/nome-unico.validator";
+import {IsInt, IsNotEmpty, IsString, MinLength } from "class-validator";
+
 
 export class criaUsuarioDTO{
     @IsString()
@@ -12,15 +12,13 @@ export class criaUsuarioDTO{
     @IsInt()
     duracao: Number;
 
-
-
-    @IsNome(undefined,{message:"Filme inválido"})    
-    @nomeUnico({message:"Filme já cadastrado"})
-    Nome: string;
-
     @IsString()
     Id: string;
 
     @MinLength(6,{message: "filme precisa existir"})
     senha: string; 
+    Nome: Number;
+    sinopse: string;
+    ano: string;
+    genero: any;
 }

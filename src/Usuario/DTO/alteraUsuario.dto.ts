@@ -1,10 +1,9 @@
 import { from } from "rxjs";
-import { IsNome, IsInt, IsNotEmpty, IsString, MinLength,IsOptional } from "class-validator";
-import { nomeUnico } from "../validacao1/nome-unico.validator";
+import {IsInt, IsNotEmpty, IsString, MinLength,IsOptional } from "class-validator";
 
 export class alteraUsuarioDTO{
     @IsString()
-    @IsNotEmpty({message: "sinopse Não pode ser vazio"})
+    @IsNotEmpty()
     @IsOptional()
     sinopse:string;
 
@@ -12,20 +11,21 @@ export class alteraUsuarioDTO{
     @IsOptional()
     id: string;
 
+    @IsString()
+    @IsOptional({message: "o nome Não pode ser vazio"})
+    nome: string;
+
+
     @IsInt()
     @IsOptional()
     duracao: Number;
 
-    @IsNome(undefined,{message:"nome invalida"})    
-    @nomeUnico({message:"nome ja informada"})
-    @IsOptional()
-    nome: string;
 
     @IsString()
     @IsOptional()
     ano: string;
 
-    @MinLength(6,{message: "Genero precisa ser informado"})
+    @IsString()
     @IsOptional()
-    genero: string; 
+    genero: string;
 }

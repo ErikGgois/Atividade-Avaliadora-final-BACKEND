@@ -52,12 +52,4 @@ export class UsuariosArmazenados{
             return usuario;
     }
 
-
-    async validaEmail(nome: string): Promise<boolean>{
-        const possivelUsuario = this.#usuarios.find(
-            usuario => usuario.nome === nome
-        );
-        return (possivelUsuario !== undefined);
-    }
-
 }

@@ -18,8 +18,8 @@ export class UsuarioController{
         
          
         var novoUsuario = new UsuarioEntity(uuid(),dadosUsuario.id,
-                                            dadosUsuario.Nome,dadosUsuario.duracao,dadosUsuario.sinopse,
-                                            dadosUsuario.ano,dadosUsuario.genero);
+                                            dadosUsuario.Nome,dadosUsuario.genero,dadosUsuario.sinopse,
+                                            dadosUsuario.ano);
         this.clsUsuariosArmazenados.AdicionarUsuario(novoUsuario);
 
         var usuario = {
@@ -38,7 +38,8 @@ export class UsuarioController{
             usuario => new ListaUsuarioDTO(
                 usuario.id,
                 usuario.nome,
-                usuario.duracao
+                usuario.sinopse,
+                usuario.sinopse,
             )
         );
         
