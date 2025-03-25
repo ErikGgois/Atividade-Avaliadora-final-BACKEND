@@ -52,4 +52,4 @@ export class UsuariosArmazenados{
             return usuario;
     }
 
-}
+} 
